@@ -101,8 +101,7 @@ public class FacebookLoginActivity extends BaseActivity implements
             @Override
             public void onSuccess(LoginResult loginResult) {
                 Log.d(TAG, "facebook:onSuccess:" + loginResult);
-                // Log.d(TAG, "아아아아" + getUid() + "/" + name + "/" + email );
-                //writeNewUser(getUid(),name,email, S.phorourl);
+                 //Log.d(TAG, "아아아아" + getUid() + "/" + name + "/" + email );
 
                 handleFacebookAccessToken(loginResult.getAccessToken());
 
@@ -165,7 +164,6 @@ public class FacebookLoginActivity extends BaseActivity implements
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        Log.d(TAG, "signInWithCredential:onComplete:" + task.isSuccessful());
                         // If sign in fails, display a message to the user. If sign in succeeds
                         // the auth state listener will be notified and logic to handle the
                         // signed in user can be handled in the listener.
@@ -173,7 +171,11 @@ public class FacebookLoginActivity extends BaseActivity implements
                             Log.w(TAG, "signInWithCredential", task.getException());
                             Toast.makeText(FacebookLoginActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
+                        }else{
+                            Log.d(TAG, "signInWithCredential:onComplete:" + task.isSuccessful());
+                            FirebaseUser user = mAuth.getCurrentUser();
                         }
+
 
                         // [START_EXCLUDE]
                         hideProgressDialog();

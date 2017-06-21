@@ -28,6 +28,11 @@ public class BaseActivity extends AppCompatActivity {
             mProgressDialog.dismiss();
         }
     }
+    @Override
+    public void onStop() {
+        super.onStop();
+        hideProgressDialog();
+    }
 
     public String getUid() {
         return FirebaseAuth.getInstance().getCurrentUser().getUid();
