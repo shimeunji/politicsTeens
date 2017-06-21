@@ -5,8 +5,6 @@ package kr.hs.e_mirim.politicsteens;
  */
 
 public class S {
-    public static String roomNameP;
-    public static String roomPassword;
     public static String phorourl;
     public static String author;
 }

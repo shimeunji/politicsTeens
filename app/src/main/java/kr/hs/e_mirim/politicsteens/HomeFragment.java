@@ -11,6 +11,11 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+import kr.hs.e_mirim.politicsteens.CustomAdapter;
+import kr.hs.e_mirim.politicsteens.PostItem;
+import kr.hs.e_mirim.politicsteens.PostListAdapter;
+import kr.hs.e_mirim.politicsteens.R;
+
 
 /**
  * A simple {@link Fragment} subclass.

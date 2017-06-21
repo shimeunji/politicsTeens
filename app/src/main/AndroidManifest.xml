@@ -24,6 +24,12 @@
         <activity android:name=".FindYourTypeActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
 
+        <activity android:name=".justnessNewPostActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity android:name=".PostDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
 
         <activity android:name=".SplashActivity"
             android:theme="@style/SplashTheme"

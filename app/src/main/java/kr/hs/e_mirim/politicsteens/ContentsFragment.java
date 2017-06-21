@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import kr.hs.e_mirim.politicsteens.R;
+
 
 /**
  * A simple {@link Fragment} subclass.

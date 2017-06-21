@@ -1,9 +1,7 @@
 package kr.hs.e_mirim.politicsteens;
 
-import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
+import android.content.Intent;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -16,17 +14,12 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 
-import android.widget.TextView;
+import com.google.firebase.auth.FirebaseAuth;
 
-import kr.hs.e_mirim.politicsteens.ContentsFragment;
-import kr.hs.e_mirim.politicsteens.HomeFragment;
-import kr.hs.e_mirim.politicsteens.JustnessFragment;
+import kr.hs.e_mirim.politicsteens.fragment.RecentPostsFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener
@@ -99,6 +92,13 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView=(NavigationView)findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        findViewById(R.id.fab_new_post).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, justnessNewPostActivity.class));
+            }
+        });
+
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -123,6 +123,7 @@ public class MainActivity extends AppCompatActivity
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
+
         return true;
     }
 
@@ -155,7 +156,7 @@ public class MainActivity extends AppCompatActivity
                     ContentsFragment tab2=new ContentsFragment();
                     return tab2;
                 case 1:
-                    JustnessFragment tab3=new JustnessFragment();
+                    RecentPostsFragment tab3=new RecentPostsFragment();
                     return tab3;
                 case 2:
                     SpaceFragment tab4=new SpaceFragment();
@@ -186,4 +187,5 @@ public class MainActivity extends AppCompatActivity
             return null;
         }
     }
+
 }
