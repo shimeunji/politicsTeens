@@ -1,20 +1,10 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     tools:context="kr.hs.e_mirim.politicsteens.MainActivity">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center_horizontal|bottom">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:weightSum="1">
 
             <ImageView
                 android:layout_width="match_parent"
@@ -33,7 +23,9 @@
                 android:layout_height="200dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="10dp"
-                android:background="@color/colorPrimary">
+                android:id="@+id/video"
+                android:background="@color/colorPrimary"
+                android:layout_below="@id/pager">
 
                 <VideoView
                     android:layout_gravity="center"
@@ -43,43 +35,28 @@
                     />
             </LinearLayout>
 
-
-
-            <!--<ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="196dp"
-                android:background="@drawable/news"
-                />-->
-
             <ImageView
+                android:layout_below="@id/video"
                 android:layout_width="wrap_content"
                 android:layout_height="46dp"
                 android:background="@drawable/popular"
-                android:layout_weight="1.90" />
+                android:layout_weight="1.90"
+                android:id="@+id/popular"/>
 
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    >
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/messages_list_home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/popular"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp"
+        android:clipToPadding="false"
+        android:padding="5dp"
+        android:paddingBottom="10dp"
+        android:scrollbars="vertical"
+        tools:listitem="@layout/item_post" />
 
-                    <ListView
-                        android:id="@+id/listview"
-                        android:layout_width="match_parent"
-                        android:layout_height="240dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginTop="10dp"
-                        android:headerDividersEnabled="false">
-
-                    </ListView>
-                </LinearLayout>
-            </ScrollView>
-        </LinearLayout>
-
-    </ScrollView>
-
-</FrameLayout>
+</RelativeLayout>

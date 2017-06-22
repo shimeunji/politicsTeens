@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="10dp"
+        android:background="@drawable/main_message_back">
+
+        <include
+            android:id="@+id/post_author_layout"
+            layout="@layout/include_post_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp" />
+
+        <LinearLayout
+            android:id="@+id/star_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/post_author_layout"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/post_author_layout"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+
+        <include
+            layout="@layout/include_post_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/post_author_layout"
+            android:layout_marginLeft="35dp"
+            android:layout_alignTop="@+id/star_layout"
+            android:id="@+id/include" />
+
+        <ImageView
+            android:id="@+id/star"
+            android:layout_width="wrap_content"
+            android:layout_height="21dp"
+            android:background="?attr/selectableItemBackground"
+            android:src="@drawable/aaa"
+            android:layout_marginRight="23dp"
+            android:layout_marginEnd="23dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:id="@+id/post_num_stars"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            tools:text="7"
+            android:layout_alignTop="@+id/star"
+            android:layout_alignRight="@+id/star"
+            android:layout_alignEnd="@+id/star" />
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

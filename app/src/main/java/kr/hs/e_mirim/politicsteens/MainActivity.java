@@ -20,6 +20,7 @@ import android.view.View;
 import com.google.firebase.auth.FirebaseAuth;
 
 import kr.hs.e_mirim.politicsteens.fragment.RecentPostsFragment;
+import kr.hs.e_mirim.politicsteens.fragment.RecentPostsFragment_main;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener
@@ -152,7 +153,7 @@ public class MainActivity extends AppCompatActivity
             // Return a PlaceholderFragment (defined as a static inner class below).
             switch (position) {
                 case 0:
-                    HomeFragment tab1=new HomeFragment();
+                    RecentPostsFragment_main tab1=new RecentPostsFragment_main();
                     return tab1;
                 case 3:
 

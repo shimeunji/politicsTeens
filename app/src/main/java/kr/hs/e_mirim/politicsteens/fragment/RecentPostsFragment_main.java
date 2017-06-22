@@ -1,15 +1,15 @@
-package kr.hs.e_mirim.politicsteens;
+package kr.hs.e_mirim.politicsteens.fragment;
 
-
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.VideoView;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.Query;
 
 import java.util.ArrayList;
 
@@ -18,11 +18,9 @@ import kr.hs.e_mirim.politicsteens.PostItem;
 import kr.hs.e_mirim.politicsteens.PostListAdapter;
 import kr.hs.e_mirim.politicsteens.R;
 
+public class RecentPostsFragment_main extends PostListFragment_main {
 
-/**
- * A simple {@link Fragment} subclass.
- */
-public class HomeFragment extends Fragment {
+    public RecentPostsFragment_main() {}
 
     ListView listView;
     PostListAdapter postListAdapter;
@@ -30,11 +28,7 @@ public class HomeFragment extends Fragment {
     VideoView videoView;
     private static final String MOVIE_URL = "http://sites.google.com/site/ubiaccessmobile/sample_video.mp4";
 
-    public HomeFragment() {
-        // Required empty public constructor
-    }
-
-
+    /*
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -47,27 +41,19 @@ public class HomeFragment extends Fragment {
         viewPager.setPageMargin(getResources().getDisplayMetrics().widthPixels/-20);
         viewPager.setOffscreenPageLimit(2);
 
-       /* listView=(ListView)view.findViewById(R.id.listview);
-        postItemArrayList=new ArrayList<PostItem>();
-
-        postItemArrayList.add(new PostItem(R.drawable.popu_1));
-        postItemArrayList.add(new PostItem(R.drawable.popu_2));
-        postItemArrayList.add(new PostItem(R.drawable.popu_3));
-
-        /*videoView = (VideoView) view.findViewById(R.id.video_View);
-        // Set video link (mp4 format )
-        Uri video = Uri.parse(MOVIE_URL);
-        videoView.setVideoURI(video);
-        videoView.requestFocus();
-        videoView.start();
-
-        videoView.stopPlayback();
-        videoView.setBackgroundColor(getResources().getColor(R.color.noColor));*/
-        /*
-        postListAdapter=new PostListAdapter(getContext(),postItemArrayList);
-        listView.setAdapter(postListAdapter);*/
-
         return view;
     }
+    */
+    @Override
+    public Query getQuery(DatabaseReference databaseReference) {
+        // [START recent_posts_query]
+        // Last 100 posts, these are automatically the 100 most recent
+        // due to sorting by push() keys
+        Query recentPostsQuery = databaseReference.child("posts")
+                .limitToFirst(3);
+        // [END recent_posts_query]
 
+
+        return recentPostsQuery;
+    }
 }
