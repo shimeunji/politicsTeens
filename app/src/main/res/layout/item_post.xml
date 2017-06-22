@@ -7,15 +7,27 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="15dp"
-        android:background="@drawable/box_post">
+        android:paddingBottom="10dp"
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
+        android:paddingTop="10dp"
+        android:background="@color/colorPrimary">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="@color/colorAccent"
+
+            android:id="@+id/imageView4" />
 
         <include
             android:id="@+id/post_author_layout"
             layout="@layout/include_post_author"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true" />
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/imageView4"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
         <LinearLayout
             android:id="@+id/star_layout"
@@ -49,10 +61,10 @@
         <include layout="@layout/include_post_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/post_author_layout"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp" />
+            android:layout_alignBottom="@+id/star_layout"
+            android:layout_toRightOf="@+id/post_author_layout"
+            android:layout_marginLeft="35dp"
+            android:layout_alignTop="@+id/star_layout" />
 
     </RelativeLayout>
 

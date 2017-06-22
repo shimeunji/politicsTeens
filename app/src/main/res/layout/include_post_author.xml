@@ -14,11 +14,12 @@
 
     <TextView
         android:id="@+id/post_author"
+        android:textColor="@color/colorAccent"
         style="@style/Base.TextAppearance.AppCompat.Small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:gravity="center_vertical"
-        tools:text="someauthor@email.com" />
+        tools:text="이름자리" />
 
 </LinearLayout>

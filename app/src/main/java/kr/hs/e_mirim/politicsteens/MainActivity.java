@@ -155,13 +155,14 @@ public class MainActivity extends AppCompatActivity
                     HomeFragment tab1=new HomeFragment();
                     return tab1;
                 case 3:
-                    RecentPostsFragment tab3=new RecentPostsFragment();
+
+                    ContentsFragment tab3=new ContentsFragment();
                     return tab3;
                 case 1:
                     JustnessFragment tab2=new JustnessFragment();
                     return tab2;
                 case 2:
-                    SpaceFragment tab4=new SpaceFragment();
+                    RecentPostsFragment tab4=new RecentPostsFragment();
                     return tab4;
                 default:
                     return null;

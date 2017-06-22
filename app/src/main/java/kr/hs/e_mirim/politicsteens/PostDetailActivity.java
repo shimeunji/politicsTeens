@@ -74,6 +74,7 @@ public class PostDetailActivity extends BaseActivity implements View.OnClickList
         mCommentButton.setOnClickListener(this);
         mCommentsRecycler.setLayoutManager(new LinearLayoutManager(this));
 
+        mBodyView.setVisibility( View.VISIBLE);
     }
 
     @Override
@@ -291,6 +292,7 @@ public class PostDetailActivity extends BaseActivity implements View.OnClickList
         public void onBindViewHolder(CommentViewHolder holder, int position) {
             Comment comment = mComments.get(position);
             holder.authorView.setText(comment.author);
+            holder.bodyView.setVisibility(View.VISIBLE);
             holder.bodyView.setText(comment.text);
         }
 
