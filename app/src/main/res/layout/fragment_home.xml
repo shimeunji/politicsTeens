@@ -1,0 +1,62 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context="kr.hs.e_mirim.politicsteens.MainActivity">
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="47dp"
+                android:background="@drawable/today_issue" />
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/pager"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:scaleType="fitXY"
+                android:layout_weight="1.09"></android.support.v4.view.ViewPager>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/video"
+                android:background="@color/colorPrimary"
+                android:layout_below="@id/pager">
+
+                <VideoView
+                    android:layout_gravity="center"
+                    android:id="@+id/video_View"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_below="@id/video"
+                android:layout_width="wrap_content"
+                android:layout_height="46dp"
+                android:background="@drawable/popular"
+                android:layout_weight="1.90"
+                android:id="@+id/popular"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/messages_list_home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/popular"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp"
+        android:clipToPadding="false"
+        android:padding="5dp"
+        android:paddingBottom="10dp"
+        android:scrollbars="vertical"
+        tools:listitem="@layout/item_post_main" />
+
+</RelativeLayout>

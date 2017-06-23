@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
+        android:paddingTop="10dp"
+        android:background="@color/colorPrimary">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="@color/colorAccent"
+
+            android:id="@+id/imageView4" />
+
+        <include
+            android:id="@+id/post_author_layout"
+            layout="@layout/include_post_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/imageView4"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <LinearLayout
+            android:id="@+id/star_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/post_author_layout"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/post_author_layout"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/star"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="8dp"
+                android:background="?attr/selectableItemBackground"
+                android:src="@drawable/aaa" />
+
+            <TextView
+                android:id="@+id/post_num_stars"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/star"
+                android:layout_alignRight="@+id/star"
+                android:layout_marginTop="-10dp"
+                android:layout_alignTop="@+id/star"
+
+                tools:text="7" />
+
+        </LinearLayout>
+
+        <include layout="@layout/include_post_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/star_layout"
+            android:layout_toRightOf="@+id/post_author_layout"
+            android:layout_marginLeft="35dp"
+            android:layout_alignTop="@+id/star_layout" />
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
