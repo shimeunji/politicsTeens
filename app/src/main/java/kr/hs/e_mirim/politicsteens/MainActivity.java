@@ -75,20 +75,20 @@ public class MainActivity extends AppCompatActivity
             public void onTabSelected(TabLayout.Tab tab){
                 mViewPager.setCurrentItem(tab.getPosition());
                 switch(tab.getPosition()){
-                    case 0:case 2:case 3:
+                    case 0:case 2:case 1:
                         findViewById(R.id.fab_new_post).setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
                                 startActivity(new Intent(MainActivity.this, justnessNewPostActivity.class));
                             }
-                        });
-                    case 4:
+                        });break;
+                    case 3:
                         findViewById(R.id.fab_new_post).setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
                                 startActivity(new Intent(MainActivity.this, NewContentActivity.class));
                             }
-                        });
+                        });break;
                 }
             }
             public void onTabUnselected(TabLayout.Tab tab){

@@ -1,0 +1,13 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="kr.hs.e_mirim.politicsteens.WebViewFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <WebView
+        android:id="@+id/news_link"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</FrameLayout>

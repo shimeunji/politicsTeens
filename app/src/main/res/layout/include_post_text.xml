@@ -13,10 +13,12 @@
         android:ellipsize="end"
         android:maxLines="1"
         android:textStyle="bold"
+        android:textColor="@color/colorAccent"
         tools:text="My First Post" />
 
     <TextView
         android:id="@+id/post_body"
+        android:textColor="@color/colorAccent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"

@@ -7,4 +7,6 @@ package kr.hs.e_mirim.politicsteens;
 public class S {
     public static String phorourl;
     public static String author;
+    public static String news_link;
+
 }

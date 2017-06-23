@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/colorPrimary"
     android:layout_height="match_parent">
 
     <EditText
@@ -12,15 +13,17 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="16dp"
-        android:hint="무슨 의견이신가요?"
+        android:hint="콘텐츠 타이틀"
+        android:textColor="@color/colorAccent"
         android:maxLines="1" />
 
     <EditText
         android:id="@+id/content_body"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="설명해주세요!"
+        android:hint="콘텐츠 내용 설명"
         android:layout_below="@+id/content_title"
+        android:textColor="@color/colorAccent"
         android:layout_marginBottom="5dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"

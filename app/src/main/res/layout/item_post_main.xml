@@ -59,6 +59,7 @@
             android:layout_alignEnd="@+id/star"
             android:layout_alignRight="@+id/star"
             android:layout_alignTop="@+id/star"
+            android:textColor="@color/colorAccent"
             android:gravity="center"
             tools:text="7" />
 

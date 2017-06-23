@@ -3,45 +3,79 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
+    android:id="@+id/home_frag"
     tools:context="kr.hs.e_mirim.politicsteens.MainActivity">
 
+    <RelativeLayout
+        android:id="@+id/news_webview"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:id="@+id/today"
+            android:background="@drawable/today_issue" />
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="47dp"
-                android:background="@drawable/today_issue" />
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/today"
+            android:layout_marginLeft="23dp"
+            android:textColor="#ffffff"
+            android:textSize="25dp" />
 
-            <android.support.v4.view.ViewPager
-                android:id="@+id/pager"
-                android:layout_width="match_parent"
-                android:layout_height="130dp"
-                android:scaleType="fitXY"
-                android:layout_weight="1.09"></android.support.v4.view.ViewPager>
+        <TextView
+            android:layout_below="@id/title"
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textColor="#ffffff"
+            android:layout_marginLeft="23dp"
+            />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="200dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="10dp"
-                android:id="@+id/video"
-                android:background="@color/colorPrimary"
-                android:layout_below="@id/pager">
+        <TextView
+            android:id="@+id/pubDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="12dp"
+            android:layout_gravity="right"
+            android:textColor="#ffffff"
+            android:textSize="16dp"
+            android:layout_alignBaseline="@+id/description"
+            android:layout_alignBottom="@+id/description"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="12dp" />
+    </RelativeLayout>
 
-                <VideoView
-                    android:layout_gravity="center"
-                    android:id="@+id/video_View"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    />
-            </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/video"
+        android:background="@color/colorPrimary"
+        android:layout_below="@id/news_webview">
 
-            <ImageView
-                android:layout_below="@id/video"
-                android:layout_width="wrap_content"
-                android:layout_height="46dp"
-                android:background="@drawable/popular"
-                android:layout_weight="1.90"
-                android:id="@+id/popular"/>
+        <ImageButton
+            android:layout_gravity="center"
+            android:id="@+id/cardview_btn"
+            android:background="@drawable/news"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_below="@id/video"
+        android:layout_width="wrap_content"
+        android:layout_height="46dp"
+        android:background="@drawable/popular"
+        android:layout_weight="1.90"
+        android:id="@+id/popular"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/messages_list_home"
